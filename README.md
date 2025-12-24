@@ -55,7 +55,7 @@ Create a `.env` file from `.env.example` in the project root with your OpenAI-co
 ### 1. Check Environment & Pull Docker Image
 
 ```bash
-sudo mw env check
+sudo uv run mw env check
 ```
 
 This command verifies Docker, KVM support, and prompts to pull the latest `mobile_world` Docker image if needed.
@@ -63,7 +63,7 @@ This command verifies Docker, KVM support, and prompts to pull the latest `mobil
 ### 2. Launch Docker Containers
 
 ```bash
-sudo mw env run --count 5 --launch-interval 20
+sudo uv run mw env run --count 5 --launch-interval 20
 ```
 
 This launches 5 containerized Android environments with:
@@ -73,7 +73,7 @@ This launches 5 containerized Android environments with:
 ### 3. Run Evaluation
 
 ```bash
-sudo mw eval \
+sudo uv run mw eval \
     --agent_type qwen3vl \
     --task ALL \
     --max_round 50 \
@@ -97,7 +97,7 @@ Parameters:
 ### 4. View Results
 
 ```bash
-mw logs view --log_dir traj_logs/qwen3_vl_logs
+uv run mw logs view --log_dir traj_logs/qwen3_vl_logs
 ```
 
 Opens an interactive web-based visualization at `http://localhost:7860` to explore task trajectories and results.
