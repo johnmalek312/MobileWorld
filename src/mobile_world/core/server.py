@@ -505,7 +505,7 @@ def init_task(req: TaskOperationRequest):
     return JSONResponse(status_code=200, content="OK")
 
 
-@app.get("/task/eval")
+@app.post("/task/eval")
 def eval_task(req: TaskOperationRequest):
     """Check if a task is successful."""
     if task_registry is None:
